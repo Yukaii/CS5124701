@@ -178,7 +178,6 @@ output {
     }
 }
 ```
-
 oauth 那些 key 就填自己申請的，keywords 自由改。
 存檔離開
 
@@ -213,5 +212,118 @@ elasticdump --input=http://localhost:9200/twitter --output=twitter.json
 之前 Github 推了 LFS(Large File Storage)，json 雖然純文字檔很好壓縮，但無論怎麽壓還是有點難推進到 100 MB ，也就是 Github 支援的最大容量，以內。勢必就要來用下 git-lfs 了。
 
 ![](http://i.imgur.com/ypwyyN4.png)
+
+## 資料格式
+
+搜尋的關鍵字是 beauty，你知道 twitter 上最多這種圖帳了，多訂閱幾個總是使人心情愉悅 #)
+
+```json
+{
+  "_index": "twitter", // 灌入到 elasticsaerch 裡的資料表
+  "_type": "logs",
+  "_id": "AVPCY9McFvHLlvNymVV9", // elasticearch 產生的 id
+  "_score": 1,
+  "_source": {
+    "created_at": "Tue Mar 29 12:40:34 +0000 2016", // 建立於
+    "id": 714794377491587100, // twitter 的 tweets id
+    "id_str": "714794377491587072",
+    "text": "Regina King On The 'Fascinating' Beauty Of Black Women's Hair https://t.co/0838uXkQ1e @HannahOliver152",
+    "source": "<a href=\"http://dlvr.it\" rel=\"nofollow\">dlvr.it</a>",
+    "truncated": false,
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": { // twitter user 的資料
+      "id": 2558258431, // user id
+      "id_str": "2558258431",
+      "name": "Hannah Oliver", //名字
+      "screen_name": "HannahOliver152", //帳號名
+      "location": null,
+      "url": "http://www.wordpress.com",
+      "description": "Our life always expresses the result of our dominant thoughts.",
+      "protected": false,
+      "verified": false,
+      "followers_count": 31,
+      "friends_count": 11,
+      "listed_count": 6,
+      "favourites_count": 0,
+      "statuses_count": 17481,
+      "created_at": "Tue Jun 10 05:18:02 +0000 2014",
+      "utc_offset": null,
+      "time_zone": null,
+      "geo_enabled": false,
+      "lang": "en",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "profile_background_color": "C0DEED",
+      "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_tile": false,
+      "profile_link_color": "0084B4",
+      "profile_sidebar_border_color": "C0DEED",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/476232749041201152/yWKGqAkC_normal.jpeg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/476232749041201152/yWKGqAkC_normal.jpeg",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/2558258431/1402377722",
+      "default_profile": true,
+      "default_profile_image": false,
+      "following": null,
+      "follow_request_sent": null,
+      "notifications": null
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "is_quote_status": false,
+    "retweet_count": 0,
+    "favorite_count": 0,
+    "entities": {
+      "hashtags": [],
+      "urls": [
+        {
+          "url": "https://t.co/0838uXkQ1e",
+          "expanded_url": "http://dlvr.it/Kw7QcG",
+          "display_url": "dlvr.it/Kw7QcG",
+          "indices": [
+            62,
+            85
+          ]
+        }
+      ],
+      "user_mentions": [
+        {
+          "screen_name": "HannahOliver152",
+          "name": "Hannah Oliver",
+          "id": 2558258431,
+          "id_str": "2558258431",
+          "indices": [
+            86,
+            102
+          ]
+        }
+      ],
+      "symbols": []
+    },
+    "favorited": false,
+    "retweeted": false,
+    "possibly_sensitive": false,
+    "filter_level": "low",
+    "lang": "en",
+    "timestamp_ms": "1459255234488",
+    "@version": "1",
+    "@timestamp": "2016-03-29T12:40:34.000Z"
+  },
+  "fields": {
+    "@timestamp": [
+      1459255234000
+    ]
+  }
+}
+```
 
 （完）
