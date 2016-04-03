@@ -217,7 +217,7 @@ elasticdump --input=http://localhost:9200/twitter --output=twitter.json
 
 搜尋的關鍵字是 beauty，你知道 twitter 上最多這種圖帳了，多訂閱幾個總是使人心情愉悅 #)
 
-```json
+```js
 {
   "_index": "twitter", // 灌入到 elasticsaerch 裡的資料表
   "_type": "logs",
