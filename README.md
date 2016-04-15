@@ -213,6 +213,14 @@ elasticdump --input=http://localhost:9200/twitter --output=twitter.json
 
 ![](http://i.imgur.com/ypwyyN4.png)
 
+### 後記
+
+結果今天 Github 捎來一封信......
+![](http://i.imgur.com/DupgRs7.png)
+![](http://i.imgur.com/d8oN5Ks.png)
+
+恩...我只是要交個作業而已啊啊啊（哭）
+
 ## 資料格式
 
 搜尋的關鍵字是 beauty，你知道 twitter 上最多這種圖帳了，多訂閱幾個總是使人心情愉悅 #)
